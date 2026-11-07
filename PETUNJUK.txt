@@ -1,0 +1,13 @@
+HADIAH ULANG TAHUN LDR — PETUNJUK
+
+1. Buka index.html dengan Chrome untuk melihat dan mengedit hadiah.
+2. Pilih foto pacarmu di halaman Kenangan. Kamu bisa memilih banyak foto sekaligus; geser galeri ke samping.
+3. Pilih file lagu romantis milikmu di halaman Pembuka. Browser akan memutarnya lewat kontrol audio.
+4. Tulis pesan pribadi di halaman Pesan Cinta, lalu tekan Simpan.
+5. Untuk QR yang bisa dipindai dari HP pacarmu, website harus diunggah ke hosting publik (misalnya GitHub Pages atau layanan hosting statis). Setelah mendapat tautan https://..., masukkan di halaman Kejutan lalu tekan Buat QR Love.
+
+CATATAN PENTING
+- Membuka index.html secara lokal hanya bisa dilihat di perangkat yang menyimpan file tersebut. Agar pacarmu bisa membuka dari jauh, unggah folder ini ke hosting publik dan bagikan tautannya/QR-nya.
+- Foto dan musik yang dipilih dari pemilih file hanya tampil di sesi/perangkat browser tersebut; untuk hadiah yang bisa dilihat pacarmu, foto dan musik perlu dimasukkan ke folder website sebelum diunggah, atau unggah langsung website yang sudah berisi media. Jangan memasukkan foto pribadi yang tidak ingin dibagikan.
+- QR ditampilkan dalam bingkai hati agar tetap mudah dipindai. QR itu sendiri tetap berbentuk kotak supaya kamera bisa membacanya dengan baik.
+- Lagu tidak disertakan otomatis. Pilih audio yang kamu punya hak untuk digunakan.

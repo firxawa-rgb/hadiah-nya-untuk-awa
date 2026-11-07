@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ff6f9f">
+<title>Untuk Kamu, Sayang ♡</title>
+<style>
+:root{--pink:#ff6f9f;--deep:#9d315f;--cream:#fff8fb;--ink:#51283b}
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,'Times New Roman',serif;background:linear-gradient(135deg,#fff0f5,#ffe1ec 55%,#fff8fb);color:var(--ink);min-height:100vh}
+header{position:sticky;top:0;z-index:5;background:#fff9fceF;backdrop-filter:blur(10px);padding:12px 10px;border-bottom:1px solid #f7c5d6}
+nav{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}nav button,.btn{border:0;border-radius:999px;padding:10px 15px;background:#ffe0eb;color:var(--deep);font-weight:bold;cursor:pointer}nav button.active,.btn.primary{background:var(--pink);color:white}
+main{max-width:850px;margin:auto;padding:24px 16px 55px}.page{display:none;animation:fade .35s}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card{background:#ffffffd9;border:1px solid #f6c7d8;border-radius:24px;padding:22px;box-shadow:0 12px 35px #b54b7418;margin:15px 0}
+.hero{text-align:center;padding:48px 22px}.heart{font-size:48px;color:var(--pink)}h1{font-size:clamp(2rem,7vw,3.6rem);color:var(--deep);margin:10px 0}h2{color:var(--deep)}p{line-height:1.8;font-size:1.08rem}.muted{color:#986b7d;font:14px Arial,sans-serif}
+input,textarea{width:100%;border:1px solid #efb8cc;border-radius:14px;padding:12px;font:16px Arial;margin:7px 0;background:#fffafd;color:var(--ink)}textarea{min-height:110px;resize:vertical}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.row>*{flex:1}
+.gallery{display:flex;overflow-x:auto;gap:13px;scroll-snap-type:x mandatory;padding:8px 2px 16px}.photo{flex:0 0 min(78vw,330px);scroll-snap-align:center;background:#fff;border-radius:18px;padding:9px;box-shadow:0 5px 18px #9d315f20}.photo img{width:100%;height:360px;object-fit:cover;border-radius:13px}.photo small{display:block;text-align:center;padding:8px}
+.quote{font-size:clamp(1.2rem,4vw,1.7rem);line-height:1.7;text-align:center;color:#873653}.dots{text-align:center;color:#d96b93}
+footer{text-align:center;color:#a66c83;padding:18px;font:13px Arial}
+#qrWrap{display:inline-flex;padding:22px;background:white;border:8px solid #ffb4ce;border-radius:45% 45% 42% 42%;box-shadow:0 5px 20px #a83c6b20}
+#qrcode img{max-width:220px;height:auto}.pageNum{text-align:center;font:12px Arial;color:#b4778e}
+@media(min-width:650px){.hero{padding:70px 35px}}
+</style></head>
+<body>
+<header><nav>
+<button class="active" data-page="0">♡ Pembuka</button><button data-page="1">Kenangan</button><button data-page="2">Pesan Cinta</button><button data-page="3">Kejutan</button>
+</nav></header>
+<main>
+<section class="page active" id="p0"><div class="card hero"><div class="heart">♥</div><div class="muted">SEBUAH HADIAH KECIL DARI JAUH</div><h1>Selamat Ulang Tahun, Sayang!</h1><p id="intro" class="quote">Walau jarak memisahkan kita, doa dan rasa sayangku selalu sampai kepadamu. Hari ini adalah hari spesial karena seseorang seindah kamu pernah hadir di dunia.</p><p class="muted">Geser halaman ini dan temukan kejutan kecil dariku ♡</p><button class="btn primary" onclick="go(1)">Mulai kejutan →</button></div><div class="card"><h2>Musik untuk menemani</h2><p class="muted">Pilih lagu romantis dari perangkatmu. Musik akan diputar setelah kamu menekan tombol play.</p><input type="file" id="musicFile" accept="audio/*"><audio id="player" controls style="width:100%"></audio></div><div class="pageNum">Halaman 1 dari 4</div></section>
+<section class="page" id="p1"><div class="card"><h2>Galeri kenangan ♡</h2><p>Tambahkan foto-foto pacarmu. Geser galeri ke kiri atau kanan untuk melihat semuanya.</p><input type="file" id="photos" accept="image/*" multiple><div class="gallery" id="gallery"><div class="muted">Foto yang kamu pilih akan muncul di sini.</div></div><p class="muted">Tips LDR: cukup gunakan foto pacarmu atau foto kenangan yang ingin kamu hadiahkan.</p></div><div class="card"><div class="quote">“Jarak hanya memisahkan tempat, bukan rasa sayang yang selalu punya jalan untuk pulang.”</div></div><div class="row"><button class="btn" onclick="go(0)">← Kembali</button><button class="btn primary" onclick="go(2)">Lanjut →</button></div><div class="pageNum">Halaman 2 dari 4</div></section>
+<section class="page" id="p2"><div class="card"><h2>Pesan dari hatiku</h2><div class="quote" id="loveText">Selamat ulang tahun, cintaku. Terima kasih sudah hadir dan membuat hari-hariku lebih berarti. Semoga semua hal baik selalu mendekatimu. Jangan pernah merasa sendiri, karena ada aku yang selalu mendukungmu, mendoakanmu, dan menyayangimu dari jauh. Aku mungkin belum bisa berada di sampingmu hari ini, tapi semoga pesan ini bisa membuatmu merasa dipeluk oleh kasih sayangku. Aku sayang kamu, hari ini, esok, dan seterusnya. ♥</div></div><div class="card"><h2>Tulis pesan versimu</h2><p class="muted">Ketik pesan pribadi, lalu tekan simpan. Pesan ini akan tampil di halaman ini pada perangkat yang sama.</p><textarea id="customMessage" placeholder="Tulis ucapan ulang tahun yang ingin kamu sampaikan..."></textarea><button class="btn primary" onclick="saveMessage()">Simpan pesan ♡</button><p class="muted" id="saved"></p></div><div class="row"><button class="btn" onclick="go(1)">← Kembali</button><button class="btn primary" onclick="go(3)">Lihat kejutan →</button></div><div class="pageNum">Halaman 3 dari 4</div></section>
+<section class="page" id="p3"><div class="card hero"><div class="heart">♥</div><h1>Doaku untukmu</h1><p class="quote">Semoga umur barumu dipenuhi kebahagiaan, kesehatan, ketenangan, dan semua impian yang sedang kamu perjuangkan. Tetap jadi kamu yang istimewa. Kalau suatu hari jarak terasa melelahkan, ingatlah bahwa ada hati yang selalu memilih kamu.</p><h2>Happy birthday, my favorite person! ♡</h2><p>Dengan penuh sayang,<br><strong id="sender">Seseorang yang selalu merindukanmu</strong></p></div>
+<div class="card"><h2>QR hadiah berbentuk hati ♡</h2><p class="muted">Setelah website ini diunggah ke internet, tempel tautan website-mu di bawah untuk membuat QR yang bisa dipindai pacarmu.</p><input id="siteUrl" type="url" placeholder="https://alamat-website-kamu..."><button class="btn primary" onclick="makeQR()">Buat QR Love</button><div style="text-align:center;margin:18px"><div id="qrWrap"><div id="qrcode"></div></div><p id="qrHint" class="muted">QR akan muncul di sini.</p></div></div>
+<div class="card"><h2>Personalisasi hadiah</h2><label class="muted">Namamu / panggilan pengirim</label><input id="senderInput" placeholder="Dari: ..."><button class="btn" onclick="setSender()">Simpan nama</button></div>
+<div class="row"><button class="btn" onclick="go(2)">← Kembali</button><button class="btn primary" onclick="go(0)">Ulangi dari awal ♡</button></div><div class="pageNum">Halaman 4 dari 4</div></section>
+</main><footer>Dibuat dengan banyak cinta, khusus untuk seseorang yang istimewa ♥</footer>
+<script>
+const pages=[...document.querySelectorAll('.page')], nav=[...document.querySelectorAll('nav button')];
+function go(n){pages.forEach((p,i)=>p.classList.toggle('active',i===n));nav.forEach((b,i)=>b.classList.toggle('active',i===n));window.scrollTo({top:0,behavior:'smooth'});}
+nav.forEach((b,i)=>b.addEventListener('click',()=>go(i)));
+document.getElementById('photos').addEventListener('change',e=>{const g=document.getElementById('gallery');g.innerHTML='';[...e.target.files].forEach((f,i)=>{const url=URL.createObjectURL(f),card=document.createElement('div');card.className='photo';const img=document.createElement('img');img.src=url;img.alt='Foto kenangan '+(i+1);const cap=document.createElement('small');cap.textContent='Kenangan indah ♥';card.append(img,cap);g.append(card);});});
+document.getElementById('musicFile').addEventListener('change',e=>{if(e.target.files[0]){const p=document.getElementById('player');p.src=URL.createObjectURL(e.target.files[0]);p.load();}});
+function saveMessage(){const v=document.getElementById('customMessage').value.trim();if(v){document.getElementById('loveText').textContent=v;document.getElementById('saved').textContent='Pesan berhasil ditampilkan ♡';}}
+function setSender(){const v=document.getElementById('senderInput').value.trim();if(v)document.getElementById('sender').textContent=v;}
+function makeQR(){const url=document.getElementById('siteUrl').value.trim(),q=document.getElementById('qrcode'),hint=document.getElementById('qrHint');q.innerHTML='';if(!/^https?:\\/\\//i.test(url)){hint.textContent='Masukkan tautan website yang diawali https://';return;}if(!window.QRCode){hint.textContent='QR perlu koneksi internet. Muat ulang halaman saat online.';return;}new QRCode(q,{text:url,width:220,height:220,colorDark:'#8d3158',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});hint.textContent='Pindai QR ini untuk membuka hadiahmu ♥';}
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body></html>
